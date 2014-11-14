@@ -1,0 +1,74 @@
+---
+title: Forms
+layout: kss_layout
+---
+
+# Forms
+
+フォームのあるページで使われるレイアウト・各パーツ一覧です。
+使用しているタグはある程度変わっても大丈夫です。
+
+---
+```
+<fieldset class="fieldset">
+  <legend class="fieldName">
+    フィールド名
+  </legend>
+
+  <div class="field">
+    <!-- 項目 -->
+    <div class="formLayout">
+      <label class="itemName" for="">label</label>
+      <div class="item">
+        <!-- フォームパーツがここに入ります -->
+      </div>
+    </div>
+    <!-- //項目 -->
+
+    <!-- 項目 -->
+    <div class="formLayout">
+      <label class="itemName" for="">label</label>
+      <div class="item">
+        <!-- フォームパーツがここに入ります -->
+      </div>
+    </div>
+    <!-- //項目 -->
+
+  </div>
+
+</fieldset>
+```
+---
+
+上記が基本になります。
+
+
+## layout
+
+<%= styleblock 'formField', section: '2.1.1' %>
+
+<%= styleblock 'formLayout', section: '2.1.2' %>
+
+<%= styleblock 'formLayout3', section: '2.1.3' %>
+
+### 番号入力のサンプル
+
+.inputTxtに.-sizeSがついています。
+
+<%= styleblock 'formLayout2', section: '2.1.2' %>
+
+## input,textarea
+ここから下は各パーツのサンプルになります。
+```<div class="item"></div>```以下が入れ替わります。
+
+<%= styleblock 'input', section: '2.2.1' %>
+
+<%= styleblock 'input_error', section: '2.2.2' %>
+
+## radio
+
+<%= styleblock 'radio', section: '2.3' %>
+
+## select
+
+<%= styleblock 'select', section: '2.4' %>

@@ -1,0 +1,86 @@
+$arrow_off-x: 0px;
+$arrow_off-y: 0px;
+$arrow_off-offset-x: 0px;
+$arrow_off-offset-y: 0px;
+$arrow_off-width: 10px;
+$arrow_off-height: 7px;
+$arrow_off-total-width: 20px;
+$arrow_off-total-height: 129px;
+$arrow_off-image: '../img/subs_parts.png';
+$arrow_off: 0px 0px 0px 0px 10px 7px 20px 129px '../img/subs_parts.png';
+$arrow_on-x: 0px;
+$arrow_on-y: 17px;
+$arrow_on-offset-x: 0px;
+$arrow_on-offset-y: -17px;
+$arrow_on-width: 10px;
+$arrow_on-height: 7px;
+$arrow_on-total-width: 20px;
+$arrow_on-total-height: 129px;
+$arrow_on-image: '../img/subs_parts.png';
+$arrow_on: 0px 17px 0px -17px 10px 7px 20px 129px '../img/subs_parts.png';
+$check_off-x: 0px;
+$check_off-y: 79px;
+$check_off-offset-x: 0px;
+$check_off-offset-y: -79px;
+$check_off-width: 20px;
+$check_off-height: 20px;
+$check_off-total-width: 20px;
+$check_off-total-height: 129px;
+$check_off-image: '../img/subs_parts.png';
+$check_off: 0px 79px 0px -79px 20px 20px 20px 129px '../img/subs_parts.png';
+$check_on-x: 0px;
+$check_on-y: 109px;
+$check_on-offset-x: 0px;
+$check_on-offset-y: -109px;
+$check_on-width: 20px;
+$check_on-height: 20px;
+$check_on-total-width: 20px;
+$check_on-total-height: 129px;
+$check_on-image: '../img/subs_parts.png';
+$check_on: 0px 109px 0px -109px 20px 20px 20px 129px '../img/subs_parts.png';
+$external-x: 0px;
+$external-y: 34px;
+$external-offset-x: 0px;
+$external-offset-y: -34px;
+$external-width: 13px;
+$external-height: 10px;
+$external-total-width: 20px;
+$external-total-height: 129px;
+$external-image: '../img/subs_parts.png';
+$external: 0px 34px 0px -34px 13px 10px 20px 129px '../img/subs_parts.png';
+$worn-x: 0px;
+$worn-y: 54px;
+$worn-offset-x: 0px;
+$worn-offset-y: -54px;
+$worn-width: 17px;
+$worn-height: 15px;
+$worn-total-width: 20px;
+$worn-total-height: 129px;
+$worn-image: '../img/subs_parts.png';
+$worn: 0px 54px 0px -54px 17px 15px 20px 129px '../img/subs_parts.png';
+
+@mixin sprite-width($sprite) {
+  width: nth($sprite, 5);
+}
+
+@mixin sprite-height($sprite) {
+  height: nth($sprite, 6);
+}
+
+@mixin sprite-position($sprite) {
+  $sprite-offset-x: nth($sprite, 3);
+  $sprite-offset-y: nth($sprite, 4);
+  background-position: $sprite-offset-x  $sprite-offset-y;
+}
+
+@mixin sprite-image($sprite) {
+  $sprite-image: nth($sprite, 9);
+  background-image: url(#{$sprite-image});
+}
+
+@mixin sprite($sprite) {
+  @include sprite-image($sprite);
+  @include sprite-position($sprite);
+  @include sprite-width($sprite);
+  @include sprite-height($sprite);
+}

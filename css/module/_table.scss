@@ -1,0 +1,142 @@
+@import "../config";
+@import "../_subs_parts";
+
+/* table
+   ========================================================================== */
+.table{
+  width: 100%;
+  border-bottom: 1px solid #CCC;
+  border-collapse: separate;
+  table-layout: fixed;
+  word-break: break-all;
+
+  thead{
+    background: #E6F4FF;
+
+    th{
+      height: 40px;
+      box-sizing: border-box;
+      vertical-align: middle;
+    }
+
+    th:nth-of-type(1){
+      padding-left: 30px;
+      text-align: left;
+    }
+  }
+
+  tbody{
+    tr + tr{
+      /* autoprefixer: off */
+      background-image: -moz-linear-gradient(
+        left,
+        color-stops(
+          #CCC, #CCC 50%,
+          rgba(0, 0, 0, 0) 50%,
+          transparent 100%
+        )
+      );
+      background-image: -ms-linear-gradient(
+        left,
+        color-stops(
+          #CCC, #CCC 50%,
+          rgba(0, 0, 0, 0) 50%,
+          transparent 100%
+        )
+      );
+      background-image: -webkit-linear-gradient(
+        left,
+        #CCC, #CCC 50%,
+        rgba(0, 0, 0, 0) 50%,
+        rgba(0, 0, 0, 0) 100%
+      );
+      /* autoprefixer: on */
+      background-image: linear-gradient(
+        left,
+        color-stops(
+          #ccc, #ccc 50%,
+          transparent 50%,
+          transparent 100%
+        )
+      );
+      background-position: 0 0;
+      background-repeat: repeat-x;
+      background-size: 4px 1px;
+    }
+
+    td{
+      padding-right: 5px;
+      padding-left: 5px;
+      box-sizing: border-box;
+      vertical-align: middle;
+      text-align: center;
+    }
+
+    td:first-of-type{
+      padding: 18px 30px 12px;
+      text-align: left;
+    }
+  }
+}
+
+.no-cssgradients{
+  .table tbody tr + tr{
+    border-top: 1px dotted #ccc;
+  }
+}
+
+
+// .table trのバリエーション。ディフォルトは各セルの均等割
+//
+// .-pricing    - 注文時に使うテーブル行
+// .-sizeL      - １行目が広めのテーブル行
+// .-sizeM      - １行目が普通のテーブル行
+// .-sizeFull   - 余白のないテーブル行
+// .-sizeS      - １行目が狭いテーブル行
+// .-disabled   - グレーアウトのテーブル行
+// .-borderNone - テーブルが2列続くとき、上部の罫線なし
+//
+// Styleguide 4.1.
+.table{
+  .-pricing th:nth-of-type(1),
+  .-pricing td:nth-of-type(1){
+    width: 330px;
+  }
+
+  .-sizeL th:nth-of-type(1),
+  .-sizeL td:nth-of-type(1){
+    width: 380px;
+  }
+
+  .-sizeM th:nth-of-type(1),
+  .-sizeM td:nth-of-type(1){
+    width: 240px;
+  }
+
+  .-sizeS th:nth-of-type(1),
+  .-sizeS td:nth-of-type(1){
+    width: 190px;
+  }
+
+  .-sizeFull th:nth-of-type(1),
+  .-sizeFull td:nth-of-type(1){
+    padding: 18px 0 12px;
+  }
+
+
+  .-disabled{
+    margin-top: -1px;
+    margin-bottom: -1px;
+    border-top: 1px solid #cccccc;
+    border-bottom: 1px solid #cccccc;
+    background: #eeeeee;
+    color: #999;
+  }
+
+  .-borderNone{
+    border-top: none!important;
+    background-image: none!important;
+  }
+}
+
+

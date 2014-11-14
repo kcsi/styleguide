@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!--[if IE 9 ]> <html class="ie9" lang="ja"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html lang="ja"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title><%= data.page.title || "Styleguide" %></title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-title" content="Styleguide">
+  <meta name="author" content="Your Company Name">
+
+  <%= stylesheet_link_tag "kss" %>
+  <%= javascript_include_tag "kss_all", "style" %>
+</head>
+<body class="<%= page_classes %>" data-spy="scroll" data-target=".dgl-sidebar">
+  <header class="dgl-header">
+    <div class="dgl-wrapper">
+      <div class="dgl-logo">
+          <!-- styleguide logo here -->
+      </div>
+      <div class="dgl-nav">
+          <%= link_to 'style guide', '/styleguide.html',  :relative=> true %>
+      </div>
+    </div>
+  </header>
+  <div class="dgl-wrapper">
+    <div class="dgl-row">
+      <div class="dgl-sidebar">
+        <ul>
+          <li><%= link_to 'Page', '/style/page.html', :relative=> true %></li>
+          <li><%= link_to 'Buttons', '/style/button.html', :relative=> true %></li>
+          <li><%= link_to 'Forms', '/style/form.html', :relative=> true %></li>
+          <li><%= link_to 'Text', '/style/text.html', :relative=> true %></li>
+          <li><%= link_to 'Table', '/style/table.html', :relative=> true %></li>
+          <li><%= link_to 'Grid', '/style/grid.html', :relative=> true %></li>
+          <li><%= link_to 'Dialog', '/style/dialog.html', :relative=> true %></li>
+          <li><%= link_to 'Utility', '/style/utility.html', :relative=> true %></li>
+        </ul>
+      </div>
+      <div class="dgl-main">
+        <%= yield %>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+@import "../config";
+@import "../_subs_parts";
+
+
+// dialog
+//
+// Styleguide 7.1.
+.dialog{
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 800px;
+  height: 230px;
+  margin: auto;
+  background: rgba(0, 0, 0, .85);
+  color: #FFF;
+  z-index: 10;
+
+  & > ._close{
+    position: absolute;
+    top: 25px;
+    right: 30px;
+    width: 40px;
+    height: 56px;
+    background: url(../img/close.png);
+    cursor: pointer;
+
+    &:hover{
+      opacity: .6;
+    }
+  }
+
+  ._container{
+    padding: 25px 30px;
+  }
+}
+
+.dialogContents{
+  display: none;
+}

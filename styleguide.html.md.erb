@@ -1,0 +1,28 @@
+---
+title: Styleguide
+layout: kss_layout
+---
+
+# Styleguide
+
+サイトで使われるパーツのHTML,CSS一覧です。
+chrome,Firefox,safari,IE9で動作確認を行っています。
+
+例：
+
+<%= styleblock 'buttons', section: '1.1' %>
+
+style guideは
+
+- スタイルの説明
+- 表示サンプル
+- 基本のソースコード
+
+で構成されています。
+
+上記は、```.button```のスタイルの一覧です。
+```.button```はhoverとactive時に色が変わり、
+サイズ違いのバリエーションが存在します。
+
+```<div class="button -sizeL"></div>```のように
+クラス名を複数追加すると、バリエーションのレイアウトを適用することができます。

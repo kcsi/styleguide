@@ -1,0 +1,92 @@
+@charset "utf-8";
+
+// base_font_size
+// ==========================================================================
+$base_font_size: 16px;
+
+
+// colors
+// ==========================================================================
+$blue        : #005897;
+$error-text  : #ea1515;
+
+// border
+// ==========================================================================
+$border-dotted  : 1px dotted #dddddd;
+
+
+// functions
+// ==========================================================================
+@mixin big-screen() {
+  @media screen and (min-width: $max-width) { @content; }
+}
+
+@mixin tablet() {
+  @media screen and (max-width: $max-width) { @content; }
+}
+
+@mixin mobile() {
+  @media screen and (max-width: 360px) { @content; }
+}
+
+@function rem-calc($num) {
+  @return ($num / $base_font_size) + rem;
+}
+
+
+@function half($num) {
+  @return ($num / 2) + px;
+}
+
+@function res($num) {
+  @return ($num / 320)* 100%;
+}
+
+@function reshalf($num) {
+  @return ($num / 320) /2 * 100%;
+}
+
+@mixin clearfix{
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+// spriteSmith
+// ==========================================================================
+@function sprite-width-return($sprite) {
+  @return nth($sprite, 5);
+}
+
+@function sprite-height-return($sprite) {
+  @return nth($sprite, 6);
+}
+
+@mixin r-sprite-width($sprite) {
+  width: nth($sprite, 5)/2;
+}
+
+@mixin r-sprite-height($sprite) {
+  height: nth($sprite, 6)/2;
+}
+
+@mixin r-sprite-position($sprite) {
+  $sprite-offset-x: nth($sprite, 3)/2;
+  $sprite-offset-y: nth($sprite, 4)/2;
+  background-position: $sprite-offset-x  $sprite-offset-y;
+}
+
+@mixin r-sprite-size($sprite) {
+  background-size: nth($sprite, 7)/2 nth($sprite, 8)/2;
+}
+
+@mixin r-sprite($sprite) {
+  @include sprite-image($sprite);
+  @include r-sprite-position($sprite);
+  @include r-sprite-width($sprite);
+  @include r-sprite-height($sprite);
+  @include r-sprite-size($sprite);
+}
+

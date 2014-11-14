@@ -1,0 +1,198 @@
+@import "../config";
+@import "../_subs_parts";
+
+/* callout
+   ========================================================================== */
+// .calloutのバリエーション。補足情報やユーザに注意を促したいメッセージを表示
+//
+// .-error - エラー時
+//
+// Styleguide 3.1.1.
+.callout{
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding-left: 23px;
+  padding-right: 23px;
+  border-radius: 5px;
+  background: #EEE;
+  overflow: hidden;
+
+  & > p,
+  & > div{
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  ul{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 0;
+    list-style-type: none;
+  }
+
+  &.-error{
+    border: 1px solid #E91514;
+    border-radius: 0;
+    background: #FFE9EB;
+    color: $error-text;
+
+    li{
+      padding-left: 13px;
+      font-weight: bold;
+    }
+
+    li:before{
+      display: inline-block;
+      position: relative;
+      top: 3px;
+      margin-right: 5px;
+      margin-left: -20px;
+      @include sprite($worn);
+      content: "";
+    }
+
+    li + li{
+      margin-top: 5px;
+    }
+  }
+}
+
+
+
+/* textContener
+   ========================================================================== */
+// .textContenerのバリエーション。使用は任意。<p>タグなどで囲まなくてもOK
+//
+// .-size600     - 幅600px
+// .-sizeFlow3   - フローが3つ並んだときと同じ幅
+// .-sizeInput   - ノーマル.inputTextと同じ幅
+// .-aster       - ※がつくテキスト
+// .-label       - ラベルの幅に合わせる
+//
+// Styleguide 3.1.2.
+.textContener{
+  display: block;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  box-sizing: border-box;
+
+  &.-size600{ width: 600px;}
+
+  &.-sizeFlow3{ width: 440px;}
+
+  &.-sizeInput{ width: 360px;}
+
+  &.-aster{
+    position: relative;
+    padding-left: 1.4em;
+
+    &:before{
+      position: absolute;
+      left: 0;
+      content: "※";
+    }
+  }
+
+  &.-label{
+    padding-left: 27px;
+  }
+}
+
+
+
+/* textConfimArea
+   ========================================================================== */
+// .textConfimAreaのバリエーション。1対1の確認事項などで利用
+//
+//
+// Styleguide 3.1.3.
+.textConfimArea{
+  width: 600px;
+  margin-right: auto;
+  margin-left: auto;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  background: #E6F4FF;
+  @include clearfix;
+
+  ._name{
+    display: block;
+    float: left;
+    height: 100%;
+    padding: 10px 13px;
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  ._contents{
+    display: block;
+    padding: 10px 13px;
+    border-left: 1px solid #ccc;
+    background: #FFF;
+    overflow: hidden;
+  }
+}
+
+
+
+/* panel
+   ========================================================================== */
+// .panelのバリエーション。
+//
+//
+// Styleguide 3.1.4.
+.panel{
+  border: 3px solid #eee;
+  box-sizing: border-box;
+}
+
+
+
+/* tooltip
+   ========================================================================== */
+// .tooltipのバリエーション
+//
+//tooltipは普段は不可視要素です。
+//
+//Javascriptやフォームでフォーカスされた時に表示されます
+//
+// Styleguide 3.1.5.
+.tooltip{
+  display: none;
+  position: absolute;
+  width: 445px;
+  padding: 9px 17px;
+  border-radius: 3px;
+  box-sizing: border-box;
+  background: #000;
+  background: rgba(0, 0, 0, .8);
+  color: #FFF;
+
+  &:after{
+    display: block;
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    width: 0;
+    height: 0;
+    margin-left: -9px;
+    border-left: 9px solid transparent;
+    border-right: 9px solid transparent;
+    border-top: 12px solid #000;
+    border-top: 12px solid rgba(0, 0, 0, .8);
+    content: "";
+  }
+
+  a{
+    color: inherit;
+  }
+}
+
+.position .tooltip{
+  bottom: 3em;
+}
+
+.button4 + .tooltip{
+  margin-left: -210px;
+}

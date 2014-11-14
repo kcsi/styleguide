@@ -1,0 +1,64 @@
+@import "../config";
+@import "../_subs_parts";
+
+/* grid
+   ========================================================================== */
+// .gridのバリエーション
+//
+// .-sizeFull     - ガターなし
+//
+// Styleguide 6.1.1.
+.grid{
+  display: -webkit-flex;
+  -webkit-flex-flow: row wrap;
+  display: -ms-flexbox;
+  -ms-flex-flow: row wrap;
+  box-sizing: border-box;
+  letter-spacing: -.4em;
+  text-rendering: optimizespeed;
+
+  &.-sizeFull{
+    margin-right: -10px;
+    margin-left: -10px;
+  }
+}
+
+
+// .-gridItemのバリエーション
+//
+// 表示サンプル右のクラス名の_(アンダーバー)が消えてしまっているのでご注意ください
+//
+// .-hasGutter  - 両端に10pxの余白(ガター)を発生
+// .-g_12_12    - 幅100%
+// .-g_9_12     - 幅75%
+// .-g_8_12     - 幅66.666667%
+// .-g_6_12     - 幅50%
+// .-g_4_12     - 幅33.333334%
+// .-g_3_12     - 幅25%
+// .-g_2_12     - 幅16.666667%
+// .-g_1_12     - 幅8.3333333%
+//
+// Styleguide 6.1.2.
+._gridItem{
+  display: inline-block;
+  box-sizing: border-box;
+  letter-spacing: normal;
+  word-spacing: normal;
+  vertical-align: top;
+  text-rendering: auto;
+  zoom: 1;
+
+  &.-hasGutter{
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+
+  &.-g_12_12{ width: 100%;}
+  &.-g_9_12{ width: (9/12) * 100%;;}
+  &.-g_8_12{ width: (8/12) * 100%;;}
+  &.-g_6_12{ width: 50%;}
+  &.-g_4_12{ width: (4/12) * 100%;;}
+  &.-g_3_12{ width: (3/12) * 100%;}
+  &.-g_2_12{ width: (2/12) * 100%;}
+  &.-g_1_12{ width: (1/12) * 100%;}
+}

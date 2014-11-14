@@ -1,0 +1,270 @@
+@import "../config";
+@import "../_subs_parts";
+
+.wrapper{
+  min-height: 100%;
+  margin-bottom: -101px;
+  padding-bottom: 51px;
+  box-sizing: border-box;
+}
+
+.content{
+  width: 800px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* header
+   ========================================================================== */
+// サイト共通ヘッダー。ログイン時はボタンのテキストが「ログアウト」
+//
+// Styleguide 0.1.
+.header{
+  padding-top: 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #6c6c6c;
+  @include clearfix;
+
+  ._logo{
+    float: left;
+    width: 180px;
+    height: 0;
+    padding-top: 30px;
+    background: url(../img/logo.png) 0 0 no-repeat;
+    overflow: hidden;
+  }
+
+  ._userAction{
+    overflow: hidden;
+    text-align: right;
+  }
+}
+
+
+
+/* footer
+   ========================================================================== */
+// サイト共通フッター
+//
+// Styleguide 0.2.
+.footer{
+  margin-top: 50px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-top: 1px solid #6c6c6c;
+  @include clearfix;
+
+  ._logo{
+    float: left;
+    width: 120px;
+    height: 0;
+    padding-top: 30px;
+    background: url(../img/logo.png) 0 0 no-repeat;
+    overflow: hidden;
+  }
+
+  ._menu{
+    overflow: hidden;
+    text-align: right;
+  }
+}
+
+.footerMenu{
+  letter-spacing: -.4em;
+
+  li{
+    display: inline-block;
+    padding-top: (30 - 12) /2 +px;
+    padding-right: 15px;
+    padding-left: 15px;
+    font-size: 11px;
+    letter-spacing: normal;
+  }
+
+  li + li:before{
+    position: relative;
+    left: -15px;
+    color: #999;
+    content: "|";
+  }
+
+  li:last-of-type{
+    padding-right: 0;
+  }
+}
+
+
+
+/* menu
+   ========================================================================== */
+// ページメニュー
+//
+// :hover - マウスオーバー時
+//
+// Styleguide 0.3.
+.pageMenu{
+  height: 35px;
+
+  ul{
+    padding: 0;
+    list-style: none;
+  }
+
+  a{
+    display: block;
+    color: inherit;
+    text-decoration: none;
+  }
+
+  & > ._primary{
+    display: table;
+    position: relative;
+    width: 100%;
+    z-index: 10;
+    table-layout: fixed;
+  }
+
+  & > ._primary > li{
+    display: table-cell;
+    position: relative;
+    padding-top: 10px;
+    padding-bottom: 8px;
+    border-right: none;
+    border-bottom: 1px solid #ccc;
+    border-left: none;
+    box-sizing: border-box;
+    font-weight: bold;
+    text-align: center;
+
+    &:hover{
+      border-bottom: 2px solid $blue;
+      color: $blue;
+      ._secondly{
+        display: block;
+      }
+    }
+
+    &:before,
+    &:after{
+      display: block;
+      position: absolute;
+      bottom: 0;
+      width: 0;
+      height: 9px;
+      border-left: 1px solid #ccc;
+      content: "";
+    }
+
+    &:before{
+      left: 0;
+    }
+    &:after{
+      right: 0;
+    }
+
+    & + li:before{
+      display: none;
+    }
+  }
+
+  ._secondly{
+    display: none;
+    position: absolute;
+    top: 100%;
+    margin-top: 2px;
+    margin-left: -1px;
+    padding-right: 1px;
+    width: 100%;
+  }
+
+  ._secondly li{
+    display: block;
+    position: relative;
+    margin-right: -1px;
+    padding: 9px 13px;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px dotted #ccc;
+    border-left: 1px solid #ccc;
+    background-color: #FFF;
+    color: #333;
+    font-weight: normal;
+    text-align: left;
+
+    &:after{
+      position: absolute;
+      top: 50%;
+      right: 13px;
+      margin-top: - sprite-height-return($arrow_off) / 2;
+      @include sprite($arrow_off);
+      content: "";
+    }
+
+    &:hover{
+      color: $blue;
+    }
+
+    &:hover:after{
+      @include sprite-position($arrow_on);
+    }
+
+    a{
+      margin: -9px -13px;
+      padding: 9px 13px;
+    }
+  }
+
+  ._secondly li:last-of-type{
+    border-bottom: 1px solid #ccc;
+  }
+}
+
+
+
+/* flow
+   ========================================================================== */
+// .pageFlow liのバリエーション。フローナビゲーションにリンクはありません
+//
+// .-here  - フローの現在地
+//
+// Styleguide 0.4.
+.pageFlow{
+  margin-top: 30px;
+  margin-bottom: 30px;
+  text-align: center;
+
+  ul{
+    padding: 0;
+    letter-spacing: -.4em;
+    list-style: none;
+  }
+
+  li{
+    display: inline-block;
+    width: 150px;
+    height: 35px;
+    border-radius: 5px;
+    background-color: #eeeeee;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAjCAAAAABqJt/mAAAAYUlEQVR4AVXHRwKAIBAEQf//2CGYQXa89tatttewlY9TC05Hmp40zbQanPY03WkaaWVx6mm60jTSyuLUgtOZdnA1uGnsNtaNlcUNY6exFtxn7DG2G6vBTWOXsW6sLO5F/AMmLLYxMKi1TAAAAABJRU5ErkJggg==);
+    background-repeat: no-repeat;
+    background-position: 100% 50%;
+    color: #999;
+    font-size: 14px;
+    letter-spacing: normal;
+    line-height: 35px;
+
+    & + li{
+      margin-left: 5px;
+    }
+
+    &.-here{
+      background-color: #e3ca1f;
+      background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAjCAMAAAB4k3AIAAAAYFBMVEXkyyT8+eX59NDlzSvt3Gzq2Fnp1Uzw4oXx5ZLn0TvlzjH17Kz277njyh/////9/PL+/ff9++3+/vr//vz48cXu33b58837+N/69tnz6aDn0kHo00Tv4Hvz6J338cLs2mRiESinAAAAbElEQVR4AVXHRwKCABAEwUVymCGpYP7/L7321q1iNEScnJ4zpypNn7S4c+pXTvXOqUuLL6eh4FRvnNo0TWnlwalZON3SKq6fsbgY64zVOzYUxiZjb2OvBYvT2MPYz9iwYnE11hprNqw8jI2I/7zHF80KtcUFAAAAAElFTkSuQmCC);
+      color: #333;
+      font-weight: bold;
+    }
+
+    &:last-of-type{
+      background-image: none;
+    }
+  }
+}

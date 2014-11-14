@@ -1,0 +1,28 @@
+---
+title: Page
+layout: kss_layout
+---
+
+# Page
+
+ページで固有のパーツ(header、footer、menu、フロー)。
+基本的に1ページに1回だけ使用
+
+## header
+
+<%= styleblock 'header', section: '0.1' %>
+
+
+## footer
+
+<%= styleblock 'footer', section: '0.2' %>
+
+## menu
+
+<%= styleblock 'menu', section: '0.3' %>
+
+## flow
+
+直前がmenuだった場合、.-mt_50を追加
+
+<%= styleblock 'flow', section: '0.4' %>

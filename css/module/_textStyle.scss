@@ -1,0 +1,215 @@
+@import "../config";
+@import "../_subs_parts";
+
+/* headline
+   ========================================================================== */
+// .headline1のバリエーション。最も大きい見出し
+//
+// .-hasLogo - ロゴ付き
+//
+// Styleguide 3.2.1.
+.headline1{
+  margin-top: 50px;
+  margin-bottom: 45px;
+  color: $blue;
+  font-family: "ヒラギノ丸ゴ Pro W4","ヒラギノ丸ゴ Pro","Hiragino Maru Gothic Pro","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","HG丸ｺﾞｼｯｸM-PRO","HGMaruGothicMPRO";
+  font-size: 24px;
+  font-weight: normal;
+  text-align: center;
+
+  &.-hasLogo{
+    margin-top: 18px;
+    margin-bottom: 40px;
+    padding-top: 44px;
+    background-image: url(http://placehold.it/239x44);
+    background-position: 50% 0;
+    background-repeat: no-repeat;
+  }
+
+  a{
+    text-decoration: none;
+  }
+}
+
+
+
+// .headline2のバリエーション。.headline1よりも優先度は低い
+//
+// Styleguide 3.2.2.
+.headline2{
+  margin-top: 50px;
+  margin-bottom: 30px;
+  font-size: 18px;
+  text-align: center;
+}
+
+
+
+// .headline3のバリエーション。.headline3よりも優先度は低い
+//
+// Styleguide 3.2.3.
+.headline3{
+  margin-top: 25px;
+  margin-bottom: 25px;
+  padding-bottom: 3px;
+  border-bottom: 1px solid $blue;
+  color: $blue;
+  font-size: 16px;
+}
+
+
+
+// .headline4のバリエーション。.headline4よりも優先度は低い
+//
+// Styleguide 3.2.4.
+.headline4{
+  margin-top: 30px;
+  font-weight: bold;
+}
+
+
+
+/* fontStyle
+   ========================================================================== */
+// テキストのバリエーション。<p>や<a>などすべてのテキストに使えます
+//
+// .-fontSize16     - font-size: 16px;
+// .-fontSize14     - font-size: 14px;
+// .-fontSize13     - font-size: 13px; サイト内のフォントサイズの初期値
+// .-fontSize12     - font-size: 12px;
+// .-fontSize11     - font-size: 11px;
+// .-fontWB         - font-weight: bold;
+// .-fontWN         - font-weight: normal;
+// .-fontImportant  - colorが目立つ色に変わる
+// .-deleted        - テキストに打ち消し線
+//
+// Styleguide 3.3.1
+.-fontSize16{ font-size: 16px!important;}
+.-fontSize14{ font-size: 14px!important;}
+.-fontSize13{ font-size: 13px!important;}
+.-fontSize12{ font-size: 12px!important;}
+.-fontSize11{ font-size: 11px!important;}
+
+.-fontWB{ font-weight: bold!important;}
+.-fontWN{ font-weight: normal!important;}
+
+.-fontImportant{ color: $error-text!important}
+
+.-deleted{ text-decoration: line-through;}
+
+.-indent0{ text-indent: 0;}
+
+.-verticalTop{ vertical-align: middle;}
+
+
+
+// 文字寄せ。ブロックレベル要素(<p><div>など)内でのみ有効です
+//
+// .-left - text-align: left;
+// .-center - text-align: center;
+// .-right - text-align:right;
+//
+// Styleguide 3.3.2
+.-left{ text-align: left!important;}
+.-center{ text-align: center!important;}
+.-right{ text-align: right!important;}
+
+
+
+/* anchor
+   ========================================================================== */
+// リンクのバリエーション
+//
+// .-external     - 外部リンク
+//
+// Styleguide 3.4.
+a.-external:after{
+  display: inline-block;
+  margin-left: 3px;
+  @include sprite($external);
+  vertical-align: 2px;
+  content: "";
+}
+
+
+
+/* label
+   ========================================================================== */
+// .labelのバリエーション
+//
+// .-important          - 注意を促すラベル
+// .-subscriptionStatus - 購読ステータスを表示する
+// .-secondly           - 角の丸いラベル
+// .-alert              - 注意をうながす
+// .-sizeFull           - 幅いっぱいにする
+//
+// Styleguide 3.5.
+.label{
+  display: inline-block;
+  padding: 0 5px;
+  border: 2px solid;
+  font-weight: bold;
+  text-align: center;
+
+  &.-important{
+    border: 2px solid $error-text;
+    color: $error-text;
+  }
+
+  &.-subscriptionStatus{
+    padding: 0;
+    border-radius: 3px;
+    border: none;
+    border: 1px solid #eeeeee;
+    background: #fff;
+    color: #ed3434;
+    font-family: inherit;
+    font-size: 14px;
+    line-height: (44 / 14);
+  }
+
+  &.-secondly{
+    padding: 2px 8px;
+    border: none;
+    border-radius: 3px;
+    background: #CCC;
+    color: #666;
+    font-size: 12px;
+    font-weight: normal;
+  }
+
+  &.-alert{
+    border: none;
+    background: $error-text;
+    color: #FFF;
+  }
+
+  &.-sizeFull{
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  & + .label{
+    margin-top: 2px;
+  }
+}
+
+
+
+/* horizen
+   ========================================================================== */
+// .horizenのバリエーション
+//
+// .-dotted - ドットの水平線
+//
+// Styleguide 3.6.
+.horizen{
+  height: 0;
+  border: none;
+  border-top: 1px solid #ccc;
+
+  &.-dotted{
+    border-top: 1px dotted #ccc;
+  }
+}
